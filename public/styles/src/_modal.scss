@@ -1,0 +1,53 @@
+.modal{
+  @include center;
+  position: fixed !important;
+  @include modal-shadow;
+  width: 300px;
+  border-radius: 3px;
+  z-index: 2;
+  background: $ff;
+  font-size: 14px;
+
+  & .modal_no{
+    text-align: center;
+    position: relative;
+    top: 30px;
+    & img{ width: 150px; }
+  }
+
+  & .modal_header{
+    background: $header;
+    border-bottom: 1px solid $header_border;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    // font-weight: 600;
+
+    & span.title{
+      font-weight: 600;
+    }
+
+  }
+
+  & .modal_middle{
+    position: relative;
+    padding: 10px;
+
+  }
+
+  & .modal_bottom{
+    display: block;
+    text-align: right;
+    padding: 9px 5px 12px 5px;
+    border-top: 1px solid $ee;
+    margin-top: 0px;
+
+    & a, & input[type='submit']{
+      display: inline-block;
+      padding: 4px 10px;
+      font-weight: 600;
+    }
+
+  }
+
+}

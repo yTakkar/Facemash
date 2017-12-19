@@ -1,5 +1,5 @@
 # Facemash
-A web-app created with React to vote your favorite users. Screenshots below!!
+A web-app created with React to vote for your favorite users. Screenshots below!!
 
 # Quick liks
 1. [Screenshots](#screenshots)

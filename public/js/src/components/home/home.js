@@ -27,7 +27,9 @@ export default class Home extends React.Component {
 
     return (
       <div class='home' >
+
         <Title value='Home' />
+
         <FadeIn duration='300ms' >
           <div className='facemash' >
 
@@ -47,6 +49,7 @@ export default class Home extends React.Component {
 
           </div>
         </FadeIn>
+
       </div>
     )
   }

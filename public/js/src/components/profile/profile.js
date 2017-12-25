@@ -13,7 +13,7 @@ import Nothing from '../others/nothing'
   }
 })
 
-export default class Home extends React.Component {
+export default class Profile extends React.Component {
 
   state = {
     invalid_user: false

@@ -158,7 +158,7 @@ app.get('/logout', mw.LoggedIn, (req, res) => {
   res.redirect(url)
 })
 
-app.get('/registered', async (req, res) => {
+app.get('/registered', mw.LoggedIn, async (req, res) => {
   let
     { id } = req.session,
     [{ email_verified }] = await db.query('SELECT email_verified FROM users WHERE id=? LIMIT 1', [ id ]),

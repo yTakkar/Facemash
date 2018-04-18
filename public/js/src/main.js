@@ -1,10 +1,8 @@
-/* eslint no-unused-vars: 0 */
-
 // USER SYSTEM (FOR NOT LOGGEDIN USER)
 import './user-system/user-system'
 
 // FOR LOGGEDIN USER
-import React from 'react'
+import React from 'react' // eslint-disable-line no-unused-vars
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store/store'

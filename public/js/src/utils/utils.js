@@ -4,7 +4,7 @@ import Notify from 'handy-notification'
 import * as user_actions from '../store/actions/user-a'
 
 // FUNCTION FOR SHORTENING
-const shortener = (elem, length) => {
+export const shortener = (elem, length) => {
   let
     parse = parseInt(length),
     len = elem.length
@@ -13,13 +13,13 @@ const shortener = (elem, length) => {
 }
 
 // FUNCTION TO TOGGLE
-const toggle = el => {
+export const toggle = el => {
   let style = el.style.display
   style === 'none' ? el.style.display = 'block' : el.style.display = 'none'
 }
 
 // FUNCTION FOR COMMON LOGIN
-const commonLogin = options => {
+export const commonLogin = options => {
   let
     { data, btn, url, redirect, defBtnValue } = options,
     overlay2 = $('.overlay-2')
@@ -52,12 +52,11 @@ const commonLogin = options => {
 }
 
 // FUNCTION TO CAPITALIZE FIRST LETTER OF A WORD
-const c_first = str => {
-  return str.charAt(0).toUpperCase() + str.substr(1)
-}
+export const c_first = str =>
+  str.charAt(0).toUpperCase() + str.substr(1)
 
 // TO REMOVE LINE OF LAST ELEMENT
-const llr = () => {
+export const llr = () => {
   let
     f = $('.modal_main').children(),
     s = $('.display_content').children().length - 1
@@ -65,16 +64,16 @@ const llr = () => {
 }
 
 // FUNCTION TO CHECK WHETHER ITS ME OR NOT
-const Me = user =>
+export const Me = user =>
   user == $('.data').data('session') ? true : false
 
 // FUNCTION TO CHECK WHETHER EMAIL IS ACTIVATED ON NOT
-const e_v = () => {
+export const e_v = () => {
   let ea = $('.data').data('email-verified')
   return ea == 'yes' ? true : false
 }
 
-const forProfile = async options => {
+export const forProfile = async options => {
   let
     { dispatch, username, invalidUser } = options,
     { data: valid } = await post('/api/is-user-valid', { username }),
@@ -92,7 +91,7 @@ const forProfile = async options => {
 
 }
 
-const edit_profile = async options => {
+export const edit_profile = async options => {
   let
     { susername, semail, username, email, bio } = options,
     button = $('.e_done'),
@@ -127,7 +126,7 @@ const edit_profile = async options => {
 
 }
 
-const resend_vl = () => {
+export const resend_vl = () => {
   let
     vl = $('.resend_vl'),
     o = $('.overlay-2')
@@ -135,7 +134,6 @@ const resend_vl = () => {
   vl
     .addClass('a_disabled')
     .text('Sending verification link..')
-
   o.show()
 
   post('/api/resend_vl')
@@ -150,7 +148,7 @@ const resend_vl = () => {
     })
 }
 
-const change_avatar = options => {
+export const change_avatar = async options => {
   let
     { file } = options,
     form = new FormData()
@@ -162,33 +160,10 @@ const change_avatar = options => {
 
   form.append('avatar', file)
 
-  $.ajax({
-    url: '/api/change-avatar',
-    method: 'POST',
-    processData: false,
-    contentType: false,
-    data: form,
-    dataType: 'JSON',
-    success: data => {
-      Notify({
-        value: data.mssg,
-        done: () => location.reload()
-      })
-    }
+  let { data } = await post('/api/change-avatar', form)
+  Notify({
+    value: data.mssg,
+    done: () => location.reload()
   })
 
-}
-
-module.exports = {
-  shortener,
-  toggle,
-  commonLogin,
-  c_first,
-  llr,
-  forProfile,
-  Me,
-  e_v,
-  edit_profile,
-  resend_vl,
-  change_avatar,
 }

@@ -12,7 +12,7 @@ A web-app created with React to vote for your favorite users. Screenshots below!
 ![alt text](https://raw.githubusercontent.com/yTakkar/Facemash/master/Screenshots/Snap%202017-12-19%20at%2017.09.22.png)
 ![alt text](https://raw.githubusercontent.com/yTakkar/Facemash/master/Screenshots/Snap%202017-12-19%20at%2017.07.49.png)
 
-UI is taken from [Instagam-clone](https://github.com/yTakkar/Instagram-Clone) I created!!
+UI is taken from [Instagam-clone](https://github.com/yTakkar/React-Instagram-Clone-2.0) I created!!
 
 # Own the project
 1. First install all dependencies:

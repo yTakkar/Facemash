@@ -1,6 +1,8 @@
 # Facemash
 A web-app created with React to vote for your favorite users. Screenshots below!!
 
+**No longer maintained.**
+
 # Quick liks
 1. [Screenshots](#screenshots)
 2. [Own the project](#own-the-project)

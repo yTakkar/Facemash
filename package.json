@@ -20,7 +20,7 @@
   "homepage": "https://github.com/yTakkar/Facemash#readme",
   "dependencies": {
     "animate-components": "^1.4.8",
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
     "client-sessions": "^0.8.0",
